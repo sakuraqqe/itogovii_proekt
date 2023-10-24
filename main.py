@@ -12,7 +12,7 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS employees (
                 )''')
 
 def add_employee(full_name, phone_number, email, salary):
-    # Добавление нового сотрудни    ка
+    # Добавление нового сотрудника
     cursor.execute("INSERT INTO employees (full_name, phone_number, email, salary) VALUES (?, ?, ?, ?)",
                    (full_name, phone_number, email, salary))
     conn.commit()
@@ -33,7 +33,7 @@ def search_employee_by_name(full_name):
     cursor.execute("SELECT * FROM employees WHERE full_name LIKE ?", ('%' + full_name + '%',))
     return cursor.fetchall()
 
-# Пример использования функций
+# функции
 if __name__ == "__main__":
     while True:
         print("1. Добавить сотрудника")
